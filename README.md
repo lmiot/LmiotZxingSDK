@@ -50,5 +50,5 @@
 
 
 ## 五.预览：
-![](https://github.com/lmiot/LmiotZxingSDK/blob/master/img/scan.gif)
+![](https://github.com/lmiot/LmiotZxingSDK/blob/master/img/sacn.gif)
 ![](https://github.com/lmiot/LmiotZxingSDK/blob/master/img/create.gif)
