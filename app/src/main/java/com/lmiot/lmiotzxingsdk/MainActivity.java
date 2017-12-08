@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 ZxingSdk.startScan(MainActivity.this, new ZxingSdk.onResultLitener() {
                     @Override
                     public void result(String result) {
-                        Log.d("MainActivity", result);
+                        Log.d("二维码扫描结果", result);
                     }
                 });
 
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                         if(bitmap!=null){
                             mImageView.setImageBitmap(bitmap);
                         }
-
 
                     }
                 });

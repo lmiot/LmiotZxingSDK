@@ -3,45 +3,46 @@
   
 
 ## 一.首先在项目的gradle中引用：
-<pre><code>
-    allprojects {
-    repositories {
-        jcenter()
-        maven { url 'https://jitpack.io' } //此处插入
-          }
-      }
-</code></pre>
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 
 
 ## 二.其次在dependencies中添加：
-<pre><code>
-dependencies {
-        compile 'com.github.lmiot:ZxingSDK:1.1'
-}
-</code></pre>
+	dependencies {
+	        compile 'com.github.lmiot:LmiotZxingSDK:1.1'
+	}
+
+
+
+
+## 三.扫描二维码，并返回结果：
+
+     ZxingSdk.startScan(MainActivity.this, new ZxingSdk.onResultLitener() {
+                    @Override
+                    public void result(String result) {
+                        Log.d("二维码扫描结果", result);
+                    }
+                });
+
+## 四.生成二维码，并返回bitmap：
+
+    ZxingSdk.CreateQRCode("https://www.baidu.com/", new ZxingSdk.onQRCodeLitener() {
+                    @Override
+                    public void result(Bitmap bitmap) {
+
+                        if(bitmap!=null){
+                            mImageView.setImageBitmap(bitmap);
+                        }
+
+                    }
+                });
+
+
 
 ## 三.预览：
 ![](https://github.com/lmiot/ZxingSDK/blob/master/img/zxing.gif)
-
-## 四.扫描二维码：
-
-     ZxingSdk.startScan(LoginActivity.this, new ZxingSdk.onResultLitener() {
-               @Override
-               public void result(String result) {
-                   Log.d("ZxingSdk", "扫描结果："+result); //回调结果：String
-
-               }
-           });
-## 五.生成二维码：
-
-      ZxingSdk.QRCode("生成二维码的字符串"", new ZxingSdk.onQRCodeLitener() {
-                                    @Override
-                                    public void result(Bitmap bitmap) {
-                                        zxingImg.setImageBitmap(bitmap); //回调结果：Bitmap
-
-                                    }
-                                });
-
-
-
-
