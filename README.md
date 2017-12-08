@@ -49,5 +49,6 @@
 
 
 
-## 三.预览：
-![](https://github.com/lmiot/ZxingSDK/blob/master/img/zxing.gif)
+## 五.预览：
+![](https://github.com/lmiot/LmiotZxingSDK/blob/master/img/scan.gif)
+![](https://github.com/lmiot/LmiotZxingSDK/blob/master/img/create.gif)
