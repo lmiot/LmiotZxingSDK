@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lmiot.lmiotzxingsdk.MainActivity">
+    tools:context="com.lmiot.lmiotzxingsdk.MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
 
-    <TextView
-        android:id="@+id/id_test"
+    <Button
+        android:id="@+id/id_sacn"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="二维码扫描"
+        android:padding="10dp"
+        />
+    <Button
+        android:id="@+id/id_create_qrcode"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="生成二维码"
         />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/id_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_test"
+        />
+
+</LinearLayout>

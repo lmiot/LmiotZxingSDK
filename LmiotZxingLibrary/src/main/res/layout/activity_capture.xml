@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:text="请将二维码置于框内,即可自动扫描"
+        android:text="@string/auto_scan_tip"
         android:textSize="15sp"
         android:layout_marginBottom="50dp"
         android:textColor="#FFFFFF"

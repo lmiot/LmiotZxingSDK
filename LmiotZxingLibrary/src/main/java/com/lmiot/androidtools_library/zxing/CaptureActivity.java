@@ -350,10 +350,10 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
             public void onClick(View v) {
                 String s = edit.getText().toString();
                 if(TextUtils.isEmpty(s)){
-                    Toast.makeText(CaptureActivity.this, "内容不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CaptureActivity.this, R.string.no_empty, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                ZxingSdk.QRCode(s, new ZxingSdk.onQRCodeLitener() {
+                ZxingSdk.CreateQRCode(s, new ZxingSdk.onQRCodeLitener() {
                     @Override
                     public void result(Bitmap bitmap) {
 
@@ -475,7 +475,7 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
                         finish();
 
                     } else {
-                        Toast.makeText(this, "图片识别失败.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, R.string.reslove_fail, Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }

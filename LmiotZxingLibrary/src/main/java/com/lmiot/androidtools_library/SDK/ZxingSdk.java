@@ -40,7 +40,7 @@ public class ZxingSdk {
 
     }
 
-    public static void QRCode(String str,onQRCodeLitener onQRCodeLitener) {
+    public static void CreateQRCode(String str, onQRCodeLitener onQRCodeLitener) {
         Bitmap bitmap = createBitmap(str);
         if(bitmap!=null){
             onQRCodeLitener.result(bitmap);
