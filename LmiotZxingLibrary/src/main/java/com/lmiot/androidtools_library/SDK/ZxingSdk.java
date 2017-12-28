@@ -37,8 +37,12 @@ public class ZxingSdk {
         if (onResultLitener01 != null) {
             onResultLitener01.result(text);
         }
+        onResultLitener01=null;
+
 
     }
+
+
 
     public static void CreateQRCode(String str, onQRCodeLitener onQRCodeLitener) {
         Bitmap bitmap = createBitmap(str);

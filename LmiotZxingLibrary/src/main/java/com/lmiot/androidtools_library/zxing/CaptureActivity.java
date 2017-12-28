@@ -156,6 +156,8 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
     @Override
     protected void onDestroy() {
         inactivityTimer.shutdown();
+
+        finishMethod();
         super.onDestroy();
     }
 
@@ -221,7 +223,28 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
         String text = rawResult.getText();
        //showSureDialog("扫描结果",text);
         ZxingSdk.setResult(text);
-        finish();
+        finishMethod();
+
+    }
+
+
+
+
+
+    private void finishMethod() {
+
+        try {
+            // 释放资源
+            if ( mediaPlayer!= null) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+            finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -295,7 +318,7 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             setResult(RESULT_CANCELED);
-            finish();
+            finishMethod();
             return true;
         } else if (keyCode == KeyEvent.KEYCODE_FOCUS || keyCode == KeyEvent.KEYCODE_CAMERA) {
             return true;
@@ -308,7 +331,7 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.id_back) {
-            finish();
+            finishMethod();
 
         } else if (id == R.id.id_light) {
 
@@ -472,11 +495,11 @@ public class CaptureActivity extends Activity implements Callback, View.OnClickL
 
                      //  showSureDialog("识别结果",rawResult.toString());
                         ZxingSdk.setResult(rawResult.toString());
-                        finish();
+                        finishMethod();
 
                     } else {
                         Toast.makeText(this, R.string.reslove_fail, Toast.LENGTH_SHORT).show();
-                        finish();
+                        finishMethod();
                     }
                 }
             } catch (FileNotFoundException e) {
