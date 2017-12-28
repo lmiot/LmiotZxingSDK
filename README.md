@@ -19,7 +19,7 @@
 
 ## 二.其次在dependencies中添加：
 	dependencies {
-	        compile 'com.github.lmiot:LmiotZxingSDK:1.1'
+	        compile 'com.github.lmiot:LmiotZxingSDK:1.2'
 	}
 
 
