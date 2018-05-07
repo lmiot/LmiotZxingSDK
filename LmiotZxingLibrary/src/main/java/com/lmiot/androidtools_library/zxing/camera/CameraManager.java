@@ -205,7 +205,10 @@ public final class CameraManager {
                     return null;
                 }
                 Point screenResolution = configManager.getScreenResolution();
-                int width = screenResolution.x * 3 / 4;
+
+
+
+               /* int width = screenResolution.x * 3 / 4;
                 if (width < MIN_FRAME_WIDTH) {
                     width = MIN_FRAME_WIDTH;
                 } else if (width > MAX_FRAME_WIDTH) {
@@ -217,8 +220,17 @@ public final class CameraManager {
                 } else if (height > MAX_FRAME_HEIGHT) {
                     height = MAX_FRAME_HEIGHT;
                 }
+
+*/
+
+				int width = screenResolution.x  / 2;
+
+				int height = screenResolution.x / 2;
+
+
+
                 int leftOffset = (screenResolution.x - width) / 2;
-                int topOffset = (screenResolution.y - height) * 2 / 5;
+                int topOffset = (screenResolution.y - height) / 2 ;
                 framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
                 Log.d(TAG, "Calculated framing rect: " + framingRect);
             }
